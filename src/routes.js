@@ -2,13 +2,13 @@ import { Switch, Route } from "react-router-dom";
 
 import Main from "./pages";
 import Login from "./pages/Login";
-import Home from "./pages/Home";
-import Aaa from "./pages/aaa";
+import Dashboards from "./pages/Dashboards";
+import Aaa from "./pages/Aaa";
 
 export const paths = {
   home: "/",
   login: "/login",
-  dashboards: "/dashboards",
+  // dashboards: "/dashboards",
   bookings: { manage: '/bookings/manage', userData: '/bookings/userdata' },
   partners: '/partners',
   services: '/services',
@@ -33,7 +33,7 @@ export const routes = () => (
 
 export const mainRoutes = () => (
   <Switch>
-    <Route exact path={paths.home} component={Home} />
+    <Route exact path={paths.home} component={Dashboards} />
     <Route path={paths.aaa} component={Aaa} />
   </Switch>
 );

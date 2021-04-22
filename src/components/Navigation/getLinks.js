@@ -15,7 +15,7 @@ export const getLinks = () => [
     icon: dashboardsImage,
     label: "Dashboards",
     menuItems: [
-      { id: "01", to: paths.dashboards, label: "Dar Lab Dashboards" },
+      { id: "01", to: paths.home, label: "Dar Lab Dashboards" },
       { id: "02", label: "Dar Nurse Dashboards" },
       { id: "03", label: "Dar Telehealth Dashboards" },
     ],
