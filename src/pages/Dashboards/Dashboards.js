@@ -1,7 +1,10 @@
-import { useMemo, useCallback } from 'react';
+import { useMemo } from 'react';
 import DataTable from 'react-data-table-component';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+
+import formatNumber from '../../helpers/formatNumber';
+import excelImage from '../../assets/excel.png';
 import useStyles, { customStyles } from './Dashboards.styles';
 
 const statuses = [
@@ -26,49 +29,49 @@ const data = [
     id: 0,
     [columnOptionData[0]]: 'Lab Care',
     [columnOptionData[1]]: 'Sharjah, Dubai',
-    [columnOptionData[2]]: 'Covid19 RT PCR Test',
-    [columnOptionData[3]]: "500 AED111000",
-    [columnOptionData[4]]: '20 AED4400',
-    [columnOptionData[5]]: '30 AED85800',
-    [columnOptionData[6]]: '55 AED12100',
-    [columnOptionData[7]]: '390 AED85800',
-    [columnOptionData[8]]: '5 AED1100',
+    [columnOptionData[2]]: { name: 'Covid19 RT PCR Test', isFast: 'Fast Track' },
+    [columnOptionData[3]]: { value: 500, amount: 111000 },
+    [columnOptionData[4]]: { value: 20, amount: 4400 },
+    [columnOptionData[5]]: { value: 30, amount: 85800 },
+    [columnOptionData[6]]: { value: 55, amount: 12100 },
+    [columnOptionData[7]]: { value: 390, amount: 85800 },
+    [columnOptionData[8]]: { value: 5, amount: 1100 },
   },
   {
     id: 1,
-    [columnOptionData[0]]: 'Lab Care',
-    [columnOptionData[1]]: 'Sharjah, Dubai',
-    [columnOptionData[2]]: 'Covid19 RT PCR Test',
-    [columnOptionData[3]]: "500 AED111000",
-    [columnOptionData[4]]: '20 AED4400',
-    [columnOptionData[5]]: '30 AED85800',
-    [columnOptionData[6]]: '55 AED12100',
-    [columnOptionData[7]]: '390 AED85800',
-    [columnOptionData[8]]: '5 AED1100',
+    [columnOptionData[0]]: 'Biogenic Lab',
+    [columnOptionData[1]]: 'Abu Dhabi',
+    [columnOptionData[2]]: { name: 'Covid19 RT PCR Test' },
+    [columnOptionData[3]]: { value: 500, amount: 111000 },
+    [columnOptionData[4]]: { value: 20, amount: 4400 },
+    [columnOptionData[5]]: { value: 30, amount: 85800 },
+    [columnOptionData[6]]: { value: 55, amount: 12100 },
+    [columnOptionData[7]]: { value: 390, amount: 85800 },
+    [columnOptionData[8]]: { value: 5, amount: 1100 },
   },
   {
     id: 2,
     [columnOptionData[0]]: 'Lab Care',
     [columnOptionData[1]]: 'Sharjah, Dubai',
-    [columnOptionData[2]]: 'Covid19 RT PCR Test',
-    [columnOptionData[3]]: "500 AED111000",
-    [columnOptionData[4]]: '20 AED4400',
-    [columnOptionData[5]]: '30 AED85800',
-    [columnOptionData[6]]: '55 AED12100',
-    [columnOptionData[7]]: '390 AED85800',
-    [columnOptionData[8]]: '5 AED1100',
+    [columnOptionData[2]]: { name: 'Covid19 RT PCR Test' },
+    [columnOptionData[3]]: { value: 500, amount: 111000 },
+    [columnOptionData[4]]: { value: 20, amount: 4400 },
+    [columnOptionData[5]]: { value: 30, amount: 85800 },
+    [columnOptionData[6]]: { value: 55, amount: 12100 },
+    [columnOptionData[7]]: { value: 390, amount: 85800 },
+    [columnOptionData[8]]: { value: 5, amount: 1100 },
   },
   {
     id: 4,
     [columnOptionData[0]]: 'Lab Care',
     [columnOptionData[1]]: 'Sharjah, Dubai',
-    [columnOptionData[2]]: 'Covid19 RT PCR Test',
-    [columnOptionData[3]]: "500 AED111000",
-    [columnOptionData[4]]: '20 AED4400',
-    [columnOptionData[5]]: '30 AED85800',
-    [columnOptionData[6]]: '55 AED12100',
-    [columnOptionData[7]]: '390 AED85800',
-    [columnOptionData[8]]: '5 AED1100',
+    [columnOptionData[2]]: { name: 'Covid19 RT PCR Test', isFast: 'Fast Track' },
+    [columnOptionData[3]]: { value: 500, amount: 111000 },
+    [columnOptionData[4]]: { value: 20, amount: 4400 },
+    [columnOptionData[5]]: { value: 30, amount: 85800 },
+    [columnOptionData[6]]: { value: 55, amount: 12100 },
+    [columnOptionData[7]]: { value: 390, amount: 85800 },
+    [columnOptionData[8]]: { value: 5, amount: 1100 },
   },
 ];
 
@@ -80,7 +83,27 @@ export default function Dashboards() {
     selector: columnOptionItem,
     sortable: true,
     wrap: true,
-    cell: (dataItem) => { console.log(dataItem); return (<Typography align="left">{dataItem[columnOptionItem]}</Typography>)}
+    cell: (dataItem) => {
+      if (columnOptionItem === columnOptionData[0] || columnOptionItem === columnOptionData[1]) {
+        return <Typography align="left">{dataItem[columnOptionItem]}</Typography>
+      } else if (columnOptionItem === columnOptionData[2]) {
+        return (
+          <div style={{ display: 'block', width: 400 }}>
+            <Typography align="left">{dataItem[columnOptionItem].name}</Typography>
+            {dataItem[columnOptionItem].isFast
+              ? <Typography style={{ color: '#F3B086' }} align="left">{dataItem[columnOptionItem].isFast}</Typography>
+              : null}
+          </div>
+        )
+      } else {
+        return (
+          <div style={{ display: 'block' }}>
+            <Typography align="left">{formatNumber(dataItem[columnOptionItem].value)}</Typography>
+            <Typography align="left">{`AED${formatNumber(dataItem[columnOptionItem].amount)}`}</Typography>
+          </div>
+        )
+      }
+    }
   })));
 
   return (
@@ -88,17 +111,16 @@ export default function Dashboards() {
       <Typography align="left" variant="h4" className={classes.header}>Dar Lab MAIN DASHBOARDS</Typography>
       <div className={classes.statusesContainer}>
         {statuses.map(item => (
-          <div>
+          <div key={item.name}>
             <Button
-              key={item.name}
               variant="contained"
               style={{ backgroundColor: item.color }}
               className={classes.buttonStatus}
             >
               <div className={classes.buttonStatusTexts}>
                 <Typography className={classes.statusHeader}>{`Total ${item.name}`}</Typography>
-                <Typography className={classes.statusValue}>{item.value}</Typography>
-                <Typography className={classes.statusAmount}>{`AED${item.amount}`}</Typography>
+                <Typography className={classes.statusValue}>{formatNumber(item.value)}</Typography>
+                <Typography className={classes.statusAmount}>{`AED${formatNumber(item.amount)}`}</Typography>
               </div>
             </Button>
             {item.name !== 'Bookings'
@@ -122,10 +144,26 @@ export default function Dashboards() {
             style={{ backgroundColor: item.color }}
             className={classes.paidOuts}
           >
-            <Typography className={classes.statusHeader}>{`Total ${item.name}`}</Typography>
-            <Typography className={classes.statusAmount}>{`AED${item.amount}`}</Typography>
+            <Typography className={classes.statusHeader}>{`Total ${formatNumber(item.name)}`}</Typography>
+            <Typography className={classes.statusAmount}>{`AED${formatNumber(item.amount)}`}</Typography>
           </div>
         ))}
+      </div>
+
+      <div className={classes.statusesContainer}>
+        <div className={classes.export}>
+          <Button>
+            <img src={excelImage} alt="" />
+          </Button>
+        </div>
+        <div className={classes.totalTable}>
+          {statuses.map((item) => (
+            <div key={item.name} className={classes.tableCell}>
+              <Typography align="left" variant="h6">{formatNumber(item.value)}</Typography>
+              <Typography align="left" variant="h6">{`AED${formatNumber(item.amount)}`}</Typography>
+            </div>
+          ))}
+        </div>
       </div>
 
       <DataTable

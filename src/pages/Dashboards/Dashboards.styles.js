@@ -50,7 +50,20 @@ export default makeStyles((theme) => ({
     height: 150,
     width: 190,
     marginBottom: 30,
-  },  
+  },
+  export: {
+    width: 'calc(100% / 9 * 3)',
+    display: 'flex',
+  },
+  totalTable: {
+    display: 'flex',
+    width: 'calc(100% / 9 * 6)'
+  },
+  tableCell: {
+    border: '1px solid #000',
+    width: 'calc(100% / 6)',
+    padding: 5,
+  },
 }));
 
 export const customStyles = {
