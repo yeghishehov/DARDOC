@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import Main from "./pages";
 import Login from "./pages/Login";
 import Dashboards from "./pages/Dashboards";
+import ManagePartners from "./pages/ManagePartners";
 
 export const paths = {
   home: "/",
@@ -33,5 +34,6 @@ export const routes = () => (
 export const mainRoutes = () => (
   <Switch>
     <Route exact path={paths.home} component={Dashboards} />
+    <Route exact path={paths.partners} component={ManagePartners} />
   </Switch>
 );

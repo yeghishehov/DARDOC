@@ -8,9 +8,9 @@ import useStyles from "./page.styles";
 
 export default function Main() {
   const classes = useStyles();
-  const { authorized } = useAuthContext();
+  const { authorized, loading } = useAuthContext();
 
-  if (!authorized) return <Redirect to={paths.login} />;
+  if (!loading && !authorized) return <Redirect to={paths.login} />;
 
   return (
     <div className={classes.root}>

@@ -2,11 +2,15 @@ import { useEffect, useState } from "react";
 
 export default function useAuth() {
   const [authorized, setAuthorized] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const isAuthorized = localStorage.getItem('authorized');
     if (isAuthorized) {
       setAuthorized(true);
+      setLoading(false)
+    } else {
+      setLoading(false)
     }
   }, []);
   
@@ -18,5 +22,5 @@ export default function useAuth() {
     }
   }, [authorized]);
 
-  return { authorized, setAuthorized };
+  return { authorized, setAuthorized, loading };
 }

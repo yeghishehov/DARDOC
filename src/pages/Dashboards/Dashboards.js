@@ -144,17 +144,21 @@ export default function Dashboards() {
             style={{ backgroundColor: item.color }}
             className={classes.paidOuts}
           >
-            <Typography className={classes.statusHeader}>{`Total ${formatNumber(item.name)}`}</Typography>
-            <Typography className={classes.statusAmount}>{`AED${formatNumber(item.amount)}`}</Typography>
+            <Typography className={classes.paidStatusHeader}>{`Total ${(item.name)}`}</Typography>
+            <Typography className={classes.paidStatusAmount}>{`AED${formatNumber(item.amount)}`}</Typography>
           </div>
         ))}
       </div>
 
       <div className={classes.statusesContainer}>
         <div className={classes.export}>
-          <Button>
-            <img src={excelImage} alt="" />
-          </Button>
+        <Button
+          variant="outlined"
+          className={classes.exportButton}
+          startIcon={<img className={classes.exportButtonIcon} src={excelImage} alt="" />}
+        >
+          Export
+      </Button>
         </div>
         <div className={classes.totalTable}>
           {statuses.map((item) => (

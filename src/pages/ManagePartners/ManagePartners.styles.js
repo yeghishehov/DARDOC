@@ -1,7 +1,9 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
-  header: {
+  header2: {
+    marginTop: 50,
+    marginBottom: 20,
   },
   statusesContainer: {
     marginTop: 30,
@@ -64,14 +66,40 @@ export default makeStyles((theme) => ({
     width: 'calc(100% / 6)',
     padding: 5,
   },
-  paidStatusHeader: {
-    fontSize: 20,
-    textTransform: 'capitalize',
-    color: '#fff',
+  boldText: {
+    fontWidth: '600 !important',
   },
-  paidStatusAmount: {
-    fontSize: 30,
-    color: '#fff',
+  label: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItem: 'center',
+    margin: 5,
+    width: '100%',
+  },
+  selectRoot: {
+    width: 150,
+    padding: '11px 15px',
+    textAlign: 'left',
+  },
+  multiline: {
+    width: 223,
+  },
+  inputColor: {
+    color: 'red',
+  },
+  inputWidth: {
+    width: 150,
+    marginRight: 5,
+  },
+  searchBar: {
+    display: 'flex',
+  },
+  searchBarLabel: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: 300,
+    marginRight: 50,
   },
   exportButton: {
     display: 'flex',
@@ -83,12 +111,6 @@ export default makeStyles((theme) => ({
 }));
 
 export const customStyles = {
-  subHeader: {
-    style: {
-      backgroundColor: '#36868F',
-      padding: '0 10px',
-    },
-  },
   rows: {
     style: {
       fontSize: '18px',

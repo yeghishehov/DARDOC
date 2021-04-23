@@ -6,10 +6,10 @@ const AuthContext = createContext({});
 export const useAuthContext = () => useContext(AuthContext);
 
 export default function AuthProvider({ children }) {
-  const { authorized, setAuthorized } = useAuth();
+  const { authorized, setAuthorized, loading } = useAuth();
 
   return (
-    <AuthContext.Provider value={{ authorized, setAuthorized }}>
+    <AuthContext.Provider value={{ authorized, setAuthorized, loading }}>
       {children}
     </AuthContext.Provider>
   );
