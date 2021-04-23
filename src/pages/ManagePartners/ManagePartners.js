@@ -304,10 +304,19 @@ export default function ManagePartners() {
         Partners Team Members
       </Typography> 
 
-      <SearchBar
-        search={search}
-        setSearch={setSearch}
-      />
+      <div className={classes.searchBar}>
+        <SearchBar
+          search={search}
+          setSearch={setSearch}
+        />
+
+        <Button
+          variant="outlined"
+          startIcon={<img className={classes.exportButtonIcon} src={excelImage} alt="" />}
+        >
+          Export
+        </Button>
+      </div>
 
       <DataTable
         keyField="id"

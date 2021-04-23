@@ -77,7 +77,7 @@ export default makeStyles((theme) => ({
     width: '100%',
   },
   selectRoot: {
-    width: 150,
+    width: 176,
     padding: '11px 15px',
     textAlign: 'left',
   },
@@ -93,6 +93,7 @@ export default makeStyles((theme) => ({
   },
   searchBar: {
     display: 'flex',
+    alignItems: 'center',
   },
   searchBarLabel: {
     display: 'flex',
