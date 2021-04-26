@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import Dashboards from "./pages/Dashboards";
 import ManagePartners from "./pages/ManagePartners";
 import ManageServices from "./pages/ManageServices";
+import ManageBookings from "./pages/ManageBookings";
 
 export const paths = {
   home: "/",
@@ -37,5 +38,6 @@ export const mainRoutes = () => (
     <Route exact path={paths.home} component={Dashboards} />
     <Route exact path={paths.partners} component={ManagePartners} />
     <Route exact path={paths.services} component={ManageServices} />
+    <Route exact path={paths.bookings.manage} component={ManageBookings} />
   </Switch>
 );
