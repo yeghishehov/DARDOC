@@ -263,12 +263,12 @@ export default function ManagePartners() {
       name: columnOptionItem,
       selector: columnOptionItem,
       // sortable: true,
-      // wrap: true,
+      wrap: true,
       cell: (dataItem) => (
         columnOptionItem === 'Profile'
           ? <Link>View</Link>
           : (
-            <Typography align="left" style={{ whiteSpace: "nowrap" }}>
+            <Typography align="left">
               {dataItem[columnOptionItem]}
             </Typography>
           )
@@ -304,19 +304,7 @@ export default function ManagePartners() {
         Partners Team Members
       </Typography> 
 
-      <div className={classes.searchBar}>
-        <SearchBar
-          search={search}
-          setSearch={setSearch}
-        />
-
-        <Button
-          variant="outlined"
-          startIcon={<img className={classes.exportButtonIcon} src={excelImage} alt="" />}
-        >
-          Export
-        </Button>
-      </div>
+      <SearchBar search={search} setSearch={setSearch} />
 
       <DataTable
         keyField="id"

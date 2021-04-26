@@ -74,15 +74,25 @@ export default makeStyles((theme) => ({
     justifyContent: 'space-between',
     alignItem: 'center',
     margin: 5,
-    width: '100%',
+    width: '90%',
+  },
+  labelMultiline: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItem: 'center',
+    margin: 5,
+    width: '104%',
   },
   selectRoot: {
-    width: 176,
+    width: 100,
     padding: '11px 15px',
     textAlign: 'left',
   },
+  smallInput: {
+    width: 140,
+  },
   multiline: {
-    width: 223,
+    width: 300,
   },
   inputColor: {
     color: 'red',
@@ -111,6 +121,9 @@ export default makeStyles((theme) => ({
     justifyContent: 'space-between',
     alignItems: 'flex-start',
   },
+  searchBarInput: {
+    marginTop: 10,
+  },
   exportButton: {
     display: 'flex',
     marginTop: 50,
@@ -118,8 +131,27 @@ export default makeStyles((theme) => ({
   exportButtonIcon: {
     width: 20,
   },
+  modalTopRow: {
+    display: 'flex',
+    justifyContent: 'space-between'
+  },
+  modalTopColLeft: {
+    width: '60%',
+  },
+  modalTopColRight: {
+    width: '40%',
+  },
+  TableCellHeader: {
+    background: '#36868F',
+    border: '3px solid #fff',
+    color: '#fff',
+  },
   TableCellNoBorder: {
     border: 0
+  },
+  tableFooter: {
+    display: 'flex !important',
+    justifyContent: 'flex-end',
   },
 }));
 
@@ -132,7 +164,6 @@ export const customStyles = {
   },
   headCells: {
     style: {
-      textAlign: 'center',
       fontSize: '20px',
       fontWeight: 'bold',
       backgroundColor: '#36868F',
@@ -155,14 +186,6 @@ export const customStyles = {
       '&:hover': {
         color: '#fff',
       },
-    },
-  },
-  cells: {
-    style: {
-      display: 'flex',
-      flexDirection: 'column',
-      alignItem: 'center',
-      justifyContent: 'center',
     },
   },
 };

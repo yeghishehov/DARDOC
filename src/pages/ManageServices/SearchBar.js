@@ -7,9 +7,7 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 import TableFooter from '@material-ui/core/TableFooter';
-import Select from "@material-ui/core/Select";
-import MenuItem from "@material-ui/core/MenuItem";
-import useStyles from "./ManagePartners.styles";
+import useStyles from "./ManageServices.styles";
 
 export default function SearchBar({ search, setSearch }) {
   const classes = useStyles();
@@ -19,7 +17,6 @@ export default function SearchBar({ search, setSearch }) {
   };
 
   if (!search) return <div />;
-
   return (
     <div className={classes.searchBar}>
       {/* <Typography variant="h5">Search bar</Typography> */}
@@ -32,32 +29,13 @@ export default function SearchBar({ search, setSearch }) {
                 className={classes.TableCellNoBorder}
               >
                 <label className={classes.searchBarLabel}>
-                  Partner Name
-                  <Select
-                    variant="outlined"
-                    value={search.partner}
-                    onChange={handleSearch}
-                    name="partner"
-                    classes={{ root: classes.selectRoot }}
-                  >
-                    <MenuItem value="">All</MenuItem>
-                    <MenuItem value="Partner 1">Partner 1</MenuItem>
-                    <MenuItem value="Partner 2">Partner 2</MenuItem>
-                    <MenuItem value="Partner 3">Partner 3</MenuItem>
-                  </Select>
-                </label>
-              </TableCell>
-              <TableCell
-                align="center"
-                className={classes.TableCellNoBorder}
-              >
-                <label className={classes.searchBarLabel}>
-                  Language
+                  Service Code
                   <TextField
+                    className={classes.searchBarInput}
                     variant="outlined"
-                    value={search.language}
+                    value={search["Service Code"]}
                     onChange={handleSearch}
-                    name="language"
+                    name="Service Code"
                     size="small"
                     type="search"
                   />
@@ -68,12 +46,30 @@ export default function SearchBar({ search, setSearch }) {
                 className={classes.TableCellNoBorder}
               >
                 <label className={classes.searchBarLabel}>
-                  Mobile Number
+                  Area
                   <TextField
+                    className={classes.searchBarInput}
                     variant="outlined"
-                    value={search.phone}
+                    value={search.Area}
                     onChange={handleSearch}
-                    name="phone"
+                    name="Area"
+                    size="small"
+                    type="search"
+                  />
+                </label>
+              </TableCell>
+              <TableCell
+                align="center"
+                className={classes.TableCellNoBorder}
+              >
+                <label className={classes.searchBarLabel}>
+                  Test Name
+                  <TextField
+                    className={classes.searchBarInput}
+                    variant="outlined"
+                    value={search.Name}
+                    onChange={handleSearch}
+                    name="Name"
                     size="small"
                     type="search"
                   />
