@@ -8,6 +8,8 @@ import ManageServices from "./pages/ManageServices";
 import ManageBookings from "./pages/ManageBookings";
 import UserDataBase from "./pages/UserDataBase";
 import BookingsAlerts from "./pages/BookingsAlerts";
+import SupportRequests from "./pages/SupportRequests";
+import UsersAlerts from "./pages/UsersAlerts";
 
 export const paths = {
   home: "/",
@@ -43,5 +45,7 @@ export const mainRoutes = () => (
     <Route exact path={paths.bookings.manage} component={ManageBookings} />
     <Route exact path={paths.bookings.userData} component={UserDataBase} />
     <Route exact path={paths.notifications.bookings} component={BookingsAlerts} />
+    <Route exact path={paths.notifications.support} component={SupportRequests} />
+    <Route exact path={paths.notifications.user} component={UsersAlerts} />
   </Switch>
 );
