@@ -179,6 +179,9 @@ export const customStyles = {
       backgroundColor: '#36868F',
       color: '#fff',
       width: 150,
+      '&:last-child': {
+        backgroundColor: '#C00000',
+      }
     },
     activeSortStyle: {
       color: '#fff',
