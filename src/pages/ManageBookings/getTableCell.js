@@ -67,8 +67,7 @@ export default function getTableCell (dataItem, columnOptionItem, handleClickMan
         </Typography>
         <Typography align="left">
           {dataItem[columnOptionItem].date}
-        </Typography>
-        <Typography align="left">
+          {', '}
           {dataItem[columnOptionItem].sex}
         </Typography>
         <Typography align="left">
