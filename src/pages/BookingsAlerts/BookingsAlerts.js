@@ -60,7 +60,7 @@ const data = [
   },
 ];
 
-export default function ManageBookings() {
+export default function BookingsAlerts() {
   const classes = useStyles();
 
   const columns = useMemo(() =>

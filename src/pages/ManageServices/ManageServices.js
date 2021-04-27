@@ -50,7 +50,7 @@ const data = [
   }
 ];
 
-export default function ManagePartners() {
+export default function ManageServices() {
   const classes = useStyles();
   const [dialogOpen, setDialogOpen] = useState(false);
   const [editForm, setEditForm] = useState({

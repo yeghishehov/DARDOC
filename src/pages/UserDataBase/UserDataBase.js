@@ -34,7 +34,7 @@ const data = [
   },
 ];
 
-export default function ManageBookings() {
+export default function UserDataBase() {
   const classes = useStyles();
   const [search, setSearch] = useState({
     name: "",
