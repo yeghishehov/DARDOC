@@ -1,5 +1,4 @@
 import TextField from "@material-ui/core/TextField";
-// import Typography from "@material-ui/core/Typography";
 import excelImage from '../../assets/excel.png';
 import Button from "@material-ui/core/Button";
 import Table from '@material-ui/core/Table';
@@ -7,8 +6,6 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 import TableFooter from '@material-ui/core/TableFooter';
-import Select from "@material-ui/core/Select";
-import MenuItem from "@material-ui/core/MenuItem";
 import useStyles from "./UserDataBase.styles";
 
 export default function SearchBar({ search, setSearch }) {

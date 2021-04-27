@@ -2,7 +2,7 @@ import Typography from "@material-ui/core/Typography";
 import { Link } from "react-router-dom";
 import { paths } from "../../routes";
 
-export default function getTableCell (dataItem, columnOptionItem, handleClickManage) {
+export default function getTableCell (dataItem, columnOptionItem) {
   if(!dataItem || !columnOptionItem) {
     return null
   }

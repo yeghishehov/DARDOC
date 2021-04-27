@@ -36,7 +36,6 @@ const data = [
 
 export default function ManageBookings() {
   const classes = useStyles();
-  const [dialogOpen, setDialogOpen] = useState(false);
   const [search, setSearch] = useState({
     name: "",
     idType: "",
@@ -46,15 +45,11 @@ export default function ManageBookings() {
     ageTo: "",
   });
 
-  const handleClickManage = () => {
-    setDialogOpen(true);
-  };
-
   const columns = useMemo(() =>
     columnOptionData.map((columnOptionItem) => ({
       name: columnOptionItem === 'Manage' ? '' : columnOptionItem,
       selector: columnOptionItem,
-      cell: (dataItem) => getTableCell(dataItem, columnOptionItem, handleClickManage),
+      cell: (dataItem) => getTableCell(dataItem, columnOptionItem),
     }))
   );
 
