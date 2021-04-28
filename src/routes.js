@@ -12,6 +12,7 @@ import SupportRequests from "./pages/SupportRequests";
 import UsersAlerts from "./pages/UsersAlerts";
 import ChangePassword from "./pages/ChangePassword";
 import ManageUsers from "./pages/ManageUsers";
+import Settings from "./pages/Settings";
 
 export const paths = {
   home: "/",
@@ -51,5 +52,6 @@ export const mainRoutes = () => (
     <Route exact path={paths.notifications.user} component={UsersAlerts} />
     <Route exact path={paths.definitions.password} component={ChangePassword} />
     <Route exact path={paths.definitions.user} component={ManageUsers} />
+    <Route exact path={paths.definitions.settings} component={Settings} />
   </Switch>
 );
