@@ -10,26 +10,34 @@ export default makeStyles((theme) => ({
     flexWrap: 'wrap',
   },
   buttonStatus: {
-    height: 200,
-    width: 190,
+    height: 150,
+    width: 150,
+    boxShadow: '0px 0px 20px rgba(71, 173, 195, 0.2)',
+    borderRadius: 20,
   },
   buttonStatusTexts: {
     display: "flex",
     flexDirection: 'column',
     justifyContent: 'space-around',
     alignItems: 'center',
-    height: 200,
-    width: 190,
+    height: 150,
+    width: 150,
+    // filter: 'invert(100%)',
+  },
+  whiteColorText: {
+    color: '#fff',
   },
   statusHeader: {
-    fontSize: 20,
+    fontSize: 18,
     textTransform: 'capitalize',
   },
   statusValue: {
-    fontSize: 30,
+    fontSize: 28,
+    fontWeight: 'bold',
   },
   statusAmount: {
-    fontSize: 25,
+    fontSize: 20,
+    fontWeight: 500,
   },
   statusPercent: {
     marginTop: 10,
@@ -50,6 +58,7 @@ export default makeStyles((theme) => ({
     height: 150,
     width: 190,
     marginBottom: 30,
+    borderRadius: 20,
   },
   export: {
     width: 'calc(100% / 9 * 3)',

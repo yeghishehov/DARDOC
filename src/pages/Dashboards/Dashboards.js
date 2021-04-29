@@ -4,7 +4,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 
 import formatNumber from '../../helpers/formatNumber';
-import excelImage from '../../assets/excel.png';
+import excelImage from '../../assets/excel.svg';
 import useStyles, { customStyles } from './Dashboards.styles';
 
 const statuses = [
@@ -112,17 +112,17 @@ export default function Dashboards() {
       <div className={classes.statusesContainer}>
         {statuses.map(item => (
           <div key={item.name}>
-            <Button
-              variant="contained"
+            <div
+              // variant="contained"
               style={{ backgroundColor: item.color }}
               className={classes.buttonStatus}
             >
               <div className={classes.buttonStatusTexts}>
-                <Typography className={classes.statusHeader}>{`Total ${item.name}`}</Typography>
+                <Typography className={`${classes.statusHeader}`}>{`Total ${item.name}`}</Typography>
                 <Typography className={classes.statusValue}>{formatNumber(item.value)}</Typography>
                 <Typography className={classes.statusAmount}>{`AED${formatNumber(item.amount)}`}</Typography>
               </div>
-            </Button>
+            </div>
             {item.name !== 'Bookings'
               ? (
                 <Typography

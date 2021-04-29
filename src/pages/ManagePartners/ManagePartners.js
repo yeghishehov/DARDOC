@@ -7,7 +7,7 @@ import TextField from "@material-ui/core/TextField";
 
 import EditModal from "./EditModal";
 import SearchBar from "./SearchBar";
-import excelImage from '../../assets/excel.png';
+import excelImage from '../../assets/excel.svg';
 import useStyles, { customStyles } from "./ManagePartners.styles";
 
 const columnOptionData = [

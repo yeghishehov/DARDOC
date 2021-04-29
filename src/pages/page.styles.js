@@ -11,5 +11,6 @@ export default makeStyles((theme) => ({
     paddingLeft: 50,
     paddingRight: 50,
     paddingTop: 50,
+    boxSizing: 'border-box',
   },
 }));
