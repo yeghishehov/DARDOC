@@ -14,6 +14,7 @@ export default makeStyles((theme) => ({
     width: 150,
     boxShadow: '0px 0px 20px rgba(71, 173, 195, 0.2)',
     borderRadius: 20,
+    cursor: 'pointer',
   },
   buttonStatusTexts: {
     display: "flex",
